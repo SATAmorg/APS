@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <style>
+        /* Estilos CSS aprimorados */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .login-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            position: absolute;
+            top: 20px;
+            right: 100px;
+        }
+
+        .login-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Ícone do carrinho */
+        .cart-icon {
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .cart-icon i {
+            color: #007bff;
+        }
+
+        /* Conteúdo do carrinho */
+        #cart-content {
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            width: 250px;
+            padding: 5px;
+            border-radius: 15px;
+            display: none;
+            box-shadow: 0px 0px 5px 0px #aaa;
+        }
+
+        #cart-content .total {
+            text-align: right;
+            margin-bottom: 10px;
+        }
+
+        #cart-content button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        #cart-content button:hover {
+            background-color: #1e7e34;
+        }
+
+        /* Estilos para a página de login */
+        #login-container {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.4);
+            border: 1px solid #ccc;
+            width: 300px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px 0px #aaa;
+            margin: 50px auto;
+        }
+
+        #login-container h1 {
+            margin: 0 0 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        #login-container input[type="text"],
+        #login-container input[type="password"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        #login-submit {
+            background-color: #1e7e34;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        #login-submit:hover {
+            background-color: #1e7e34;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1e7e34;
+            font-size: 14px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        .inputSubmit:hover{
+            background-color: #1e7e34;
+            cursor: pointer;
+        }
+        legend{
+            border:1px solid #ffffff;
+            padding: 10px;
+            text-align: center;
+            background-color: none;
+            border-radius: 8px;
+        }
+        fieldset{
+            border:none;
+        }
+        .inputUser{
+            background: none;
+            border: none;
+            border-bottom: 1px solid white;
+            outline: none;
+            color: white;
+            font-size: 15px;
+            width: 100%;
+            letter-spacing: 2px;
+        }
+        .label_input{
+
+            top: 0px;
+            left: 0px;
+            pointer-events: none;
+            transition: .5px;
+        }
+        .inputUser:focus ~ .label_input,
+        .inputUser:valid ~ .label_input{
+            top:-20px;
+            font-size: 12px;
+            color: #333;
+        }
+
+    </style>
+    <title>Login</title>
+</head>
+<body>
+    <!-- Conteúdo da página de login -->
+    <header>
+        <h1>Comércio Eletrônico</h1>
+        <div class="cart-icon" id="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+        </div>
+        <button class="login-button" id="login-button">Login</button>
+        <button class="login-button" id="logout-button" style="display: none;">Logout</button>
+    </header>
+    <div id="login-container">
+        <legend><b>Login</b></legend>
+        <br>
+        <div class="inputBox">
+            <input type="text" name="name" id="name" class="inputUser" required>
+            <label for="name" class="label_input">Nome Completo</label>
+        </div>
+        <div class="inputBox">
+            <input type="password" name="senha" id="senha" class="inputUser" required>
+            <label for="senha" class="label_input">Senha</label>
+        </div>
+        <br>
+        <input class="submit" type="submit" name="submit" value="Enviar">
+        <br><br>
+        <a href="formulario.php">Não tem uma conta? Registre aqui</a>
+    </div>
+</body>
+</html>

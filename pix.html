@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <style>
+        /* Estilos CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            border: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .qr-code img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .payment-details {
+            text-align: center;
+            margin-top: 20px;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        .back{
+            color: black;
+            background-color: rgb(117, 114, 114);
+            border: none;
+            padding: 15px;
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 10px;
+            color: white;
+        }
+    </style>
+    <title>Pagamento PIX</title>
+</head>
+<body>
+    
+    <h1>Pagamento PIX</h1>
+    <div class="qr-code">
+        <!-- Imagem do QR code falso -->
+        <img src="qrcode.png" alt="QR Code PIX">
+    </div>
+    <div class="payment-details">
+        <p>Por favor, escaneie o QR Code acima para realizar o pagamento no valor de:</p>
+        <h2>R$ <span id="payment-amount">0.00</span></h2>
+        <p>Referente à sua compra na nossa loja.</p>
+    </div>
+
+    <script>
+        // Recupere o valor do carrinho de compras da página "loja.html" do localStorage
+        const cartTotal = localStorage.getItem('cartTotal');
+
+        // Atualize o valor exibido na página com o valor do carrinho
+        if (cartTotal) {
+            document.getElementById('payment-amount').textContent = cartTotal;
+        } else {
+            // Defina um valor padrão se nenhum valor for encontrado
+            document.getElementById('payment-amount').textContent = '0.00';
+        }
+    </script>
+        <a class="back" href="loja.php">Voltar</a>
+</body>
+</html>
